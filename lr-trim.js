@@ -13,7 +13,7 @@ fs.readdirSyncFull = function(dir, options) {
 //   Each candidate directory to remove has only a *.lrcat.zip file in it
 
 const usage = `
-Usage: lr-trim [-p] [-d=nnn] [-n=nnn] parentDir
+Usage: node lr-trim.js [-p] [-d=nnn] [-n=nnn] [-m=nnn] backupParentDir
     -l       list only, don't delete anything
     -d=nnn   minimum number of days of backups to keep from newest backup (default is 30)
     -n=nnn   minimum number of backups to keep (default is 10)
