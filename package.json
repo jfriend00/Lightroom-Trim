@@ -1,0 +1,13 @@
+{
+  "name": "lightroom-trim",
+  "version": "1.0.0",
+  "description": "Remove older Lightroom catalog backups",
+  "main": "lr-trim.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Friend",
+  "license": "ISC"
+}
