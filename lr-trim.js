@@ -100,6 +100,8 @@ for (folder of folders) {
                 let matches = regex.exec(f.dir);
                 if (matches) {
                     f.date = new Date(+matches[1], +matches[2] - 1, +matches[3]);
+                    // text sort works because day, month, year are always expanded to common length so
+                    // 01 sorts properly with 12
                     f.sortKey = `${matches[1]}-${matches[2]}-${matches[3]} ${matches[4]}`;
                     return true;
                 } else {
@@ -141,7 +143,7 @@ if (listOnly) {
 
 let newestDate = zipFiles[0].date;
 
-// keep last minNumToKeep
+// keep last minNumToKeep by removing them from the zipFiles list
 zipFiles.splice(0, minNumToKeep);
 
 // keep any zips that are newer than minDaysToKeep old
