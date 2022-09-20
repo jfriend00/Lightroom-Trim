@@ -117,8 +117,9 @@ for (const catalog of catalogs) {
     }
 
     // implement minNumToKeep by removing the newest minNumToKeep from our info array
-    if (minNumToKeep && backupInfo.length > minNumToKeep) {
-        backupInfo.length = backupInfo.length - minNumToKeep;
+    // removing them from the array means they won't be deleted
+    if (minNumToKeep) {
+        backupInfo.length = Math.max(backupInfo.length - minNumToKeep, 0);
     }
 
     // implement minDaysToKeep by filtering on the date
